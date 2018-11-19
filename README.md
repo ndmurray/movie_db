@@ -1,4 +1,4 @@
-# MovieDB - the Django App for film enthsiasts!
+# MovieDB - the Django App for film enthusiasts!
 
 Completed as a part of the Human Computer Interaction Master's program at the University of Michigan, School of Information
 
