@@ -1,0 +1,12 @@
+
+1. TITLE: title_basics.tsv, sort descending by 'startYear' and take the first 5000 records, get rid of the rest DONE.
+
+2. LOOKUP TABLES: Bring in the new title output file, pull out list of title ids as a series
+3. Flatten name_basics.tsv so that there's one column for "knownForTitles"
+4. Filter the new dataframe so that only the title ids that appear in step2 are included
+5. Cut the new lookup tables based on the filtered 'knownForTitles'
+
+6. ACTOR, WRITER, DIRECTOR: Similar to lookup tables, filter the dataframe on those top 5000 titles DONE.
+
+7. BACK TO LOOKUP TABLES
+-limit them to the actors, directors, and writers in the actor, writer, director tables. Otherwise data import will fail
