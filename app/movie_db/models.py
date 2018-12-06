@@ -18,6 +18,12 @@ class Actor(models.Model):
     class Meta:
         managed = False
         db_table = 'actor'
+        ordering = ['primaryname']
+        verbose_name = 'Actor name'
+        verbose_name_plural = 'Actors names'
+
+    def __str__(self):
+        return self.primaryname
 
 
 class ActorLookup(models.Model):
@@ -28,6 +34,9 @@ class ActorLookup(models.Model):
     class Meta:
         managed = False
         db_table = 'actor_lookup'
+        ordering = ['a_title','actor']
+        verbose_name = 'Actor lookup value'
+        verbose_name_plural = 'Actor lookup values'
 
 
 class Director(models.Model):
@@ -40,6 +49,12 @@ class Director(models.Model):
     class Meta:
         managed = False
         db_table = 'director'
+        ordering = ['primaryname']
+        verbose_name = 'Director name'
+        verbose_name_plural = 'Directors names'
+
+    def __str__(self):
+        return self.primaryname
 
 
 class DirectorLookup(models.Model):
@@ -50,6 +65,10 @@ class DirectorLookup(models.Model):
     class Meta:
         managed = False
         db_table = 'director_lookup'
+        ordering = ['d_title','director']
+        verbose_name = 'Director lookup value'
+        verbose_name_plural = 'Director lookup values'
+
 
 
 class Title(models.Model):
@@ -66,6 +85,12 @@ class Title(models.Model):
     class Meta:
         managed = False
         db_table = 'title'
+        ordering = ['primarytitle']
+        verbose_name = 'Film title'
+        verbose_name_plural = 'Film names'
+
+    def __str__(self):
+        return self.primarytitle + ", " + self.startyear
 
 
 class Writer(models.Model):
@@ -78,6 +103,12 @@ class Writer(models.Model):
     class Meta:
         managed = False
         db_table = 'writer'
+        ordering = ['primaryname']
+        verbose_name = 'Writer name'
+        verbose_name_plural = 'Writers names'
+
+    def __str__(self):
+        return self.primaryname
 
 
 class WriterLookup(models.Model):
@@ -88,3 +119,6 @@ class WriterLookup(models.Model):
     class Meta:
         managed = False
         db_table = 'writer_lookup'
+        ordering = ['w_title','writer']
+        verbose_name = 'Writer lookup value'
+        verbose_name_plural = 'Writer lookup values'
