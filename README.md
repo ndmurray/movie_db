@@ -18,6 +18,10 @@ OMDB: http://www.omdbapi.com/
 
 Please see movie_db_model.png in the root directory of this repository for a graphical representation of the (MySQL) data model.
 
+## Data tables
+
+
+
 ## Package Dependencies
 
 certifi==2018.10.15
