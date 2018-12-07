@@ -6,150 +6,26 @@
     <div class="portfolio">
       <div class="container-fluid">
         <ul class="row items">
+
+          {% for title in object_list %}
           
           <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="http://img.omdbapi.com/?i=tt0067185&h=600&apikey=4ccd31d2" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
+            <li class="item col-md-3 no-padding  photo"> 
+              <!-- Image --> 
+              <img class="img-responsive" src="http://img.omdbapi.com/?i={{title.title_id}}&h=600&apikey=4ccd31d2" alt="" onerror="this.onerror=null;this.src='https://s3.us-east-2.amazonaws.com/s3.kzjkfm.radio.com/styles/delta__775x515/s3/amywinehouse2207r.jpg?itok=vKA-s9tl&c=251e072e26d968bf4893812a5ea8f2a2';"> 
+              <!-- Hover Section -->
+              <div class="hover-sec"> 
+                <!-- Hover Link --> 
+                <a href="portfolio-single.html" class="hover-in"> <span class="name">{{ title.primaryname | safe}}</span>
+                <hr>
+                <span class="cat">Branding</span> </a> </div>
+            </li>
+
+         {% empty %}
+          No results found.
+         {% endfor %}
+
           
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding brand web photo product"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="http://img.omdbapi.com/?i=tt0133093&h=600&apikey=4ccd31d2" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding photo product"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-3.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding web photo "> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-4.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  photo product"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-5.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding brand photo product"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-6.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding brand web"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-7.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  web photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-8.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  web photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-9.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  web photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-10.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  web photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-11.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
-          
-          <!-- Portfolio Item -->
-          <li class="item col-md-3 no-padding  web photo"> 
-            <!-- Image --> 
-            <img class="img-responsive" src="images/img-12.jpg" alt="" > 
-            <!-- Hover Section -->
-            <div class="hover-sec"> 
-              <!-- Hover Link --> 
-              <a href="portfolio-single.html" class="hover-in"> <span class="name">THE ORDIC PACKAGE</span>
-              <hr>
-              <span class="cat">Branding</span> </a> </div>
-          </li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +127,7 @@
     </header>
     
     	{% block content %}{% endblock %}
-    	
+
   </div>
 </div>
 <!-- Wrap End --> 
@@ -134,8 +136,9 @@
 <div class="search"> <a href="" class="search-close"><i class="ion-android-close"></i></a>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <form class="search-form">
-        <input type="text" id="search" name="search" class="text-center" placeholder="Search" />
+      <form action="" method="get" class="search-form">
+        <!-- <input type="text" id="search" name="search" class="text-center" placeholder="Search" />	 -->
+        {{ filter.form|crispy }}
         <button type="submit"><i class="ion-ios-search-strong"></i></button>
       </form>
       <!-- end .search-form --> 
