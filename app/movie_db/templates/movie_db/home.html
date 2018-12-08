@@ -8,24 +8,35 @@
         <ul class="row items">
 
           {% for title in object_list %}
-          
           <!-- Portfolio Item -->
-            <li class="item col-md-3 no-padding  photo"> 
+          <!-- <div class="item-div"> -->
+            <li class="item col-md-2 photo fade"> 
               <!-- Image --> 
-              <img class="img-responsive" src="http://img.omdbapi.com/?i={{title.title_id}}&h=600&apikey=4ccd31d2" alt="" onerror="this.onerror=null;this.src='https://s3.us-east-2.amazonaws.com/s3.kzjkfm.radio.com/styles/delta__775x515/s3/amywinehouse2207r.jpg?itok=vKA-s9tl&c=251e072e26d968bf4893812a5ea8f2a2';"> 
+              <img class="img-responsive" src="http://img.omdbapi.com/?i={{title.title_id}}&h=600&apikey=4ccd31d2" alt="" onerror="this.onerror=null;this.src='https://s3.us-east-2.amazonaws.com/s3.kzjkfm.radio.com/styles/delta__775x515/s3/amywinehouse2207r.jpg?itok=vKA-s9tl&c=251e072e26d968bf4893812a5ea8f2a2';">
+              <div class="thumb-title">
+                  <!-- <h4>{{title.primarytitle}}</h4> -->
+                  <div class="thumb-sub sub-year">{{title.startyear}}</div>
+                  <div class="thumb-sub sub-rating">{{title.averagerating}}</div> 
+
+              </div>
               <!-- Hover Section -->
               <div class="hover-sec"> 
                 <!-- Hover Link --> 
-                <a href="portfolio-single.html" class="hover-in"> <span class="name">{{ title.primaryname | safe}}</span>
+                <a href="portfolio-single.html" class="hover-in"> <span class="name">{{ title.primarytitle | safe }}</span>
                 <hr>
-                <span class="cat">Branding</span> </a> </div>
+                <!-- <span class="cat">Branding</span> </a> </div> -->
+                <p>{{ title.genres }}</p>
+                <p>Runtime: {{ title.runtimeminutes }} minutes</p>
+                <p style="line-height: 16px;">Rated {{title.averagerating}}/10 based on {{title.numvotes}} votes.</p>
+
             </li>
+          <!-- </div> -->
+
 
          {% empty %}
           No results found.
          {% endfor %}
 
-          
         </ul>
       </div>
     </div>

@@ -24,6 +24,7 @@ def index(request):
 	return HttpResponse("Welcome. To the Movie DB")
 
 class HomePageView(FilterView):
+	context_object_name = 'home'
 	template_name = 'movie_db/home.html'
 	filterset_class = TitleFilter
 
