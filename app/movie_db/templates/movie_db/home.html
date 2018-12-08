@@ -5,6 +5,7 @@
 <!--======= PORTFOLIO =========-->
     <div class="portfolio">
       <div class="container-fluid">
+      <h2 id="page-title">Welcome to IMDB's top 5,000 films.</h2>
         <ul class="row items">
 
           {% for title in object_list %}
@@ -22,10 +23,14 @@
               <!-- Hover Section -->
               <div class="hover-sec"> 
                 <!-- Hover Link --> 
-                <a href="portfolio-single.html" class="hover-in"> <span class="name">{{ title.primarytitle | safe }}</span>
+                <a href="https://www.imdb.com/title/{{title.title_id}}" target = "_blank" class="hover-in"> <span class="name">{{ title.primarytitle | safe }}</span>
                 <hr>
                 <!-- <span class="cat">Branding</span> </a> </div> -->
-                <p>{{ title.genres }}</p>
+                <p>{% if title.genres|length > 80 %}
+                        {{title.genres|slice:80}}
+                   {% else  %}
+                        {{title.genres }}
+                   {% endif %}</p>
                 <p>Runtime: {{ title.runtimeminutes }} minutes</p>
                 <p style="line-height: 16px;">Rated {{title.averagerating}}/10 based on {{title.numvotes}} votes.</p>
 
@@ -34,7 +39,7 @@
 
 
          {% empty %}
-          No results found.
+          <h1 id="placeholder">Click the Search icon on the left to get started.</h1>
          {% endfor %}
 
         </ul>
