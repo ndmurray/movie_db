@@ -1,2 +1,2 @@
-secrets.py
+app/mysite/secrets.py
 raw_data

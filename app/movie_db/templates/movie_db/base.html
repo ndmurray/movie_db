@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monsterrat - Minimal HTML5 Portfolio</title>
+<title>Movie DB!</title>
 <meta name="keywords" content="HTML5,CSS3,HTML,Template,Multi-Purpose,M_Adnan,Corporate Theme,HTML5 Portfolio Template">
 <meta name="description" content="Monsterrat - Minimal HTML5 Portfolio">
 <meta name="author" content="M_Adnan">
@@ -50,24 +50,29 @@
           
           
         <div class="navgation"> 
-        
-        <a href="#."><i class="ion-navicon fa-2x"></i></a>
+        <!--======= SEARCH ICON =========--> 
+        <a href="" class="open-search header-open-search"><i class="ion-ios-search"></i></a> 
+        <!--========= ABOUT ============-->
+        <a href="#." class="nav-text"><!--<i class="ion-navicon fa-2x">-->About</i></a>
           <div class="open-navigation">
             <div class="navi-in animated flipInY"> 
               <!--======= LOGO =========--> 
-              <a href="#." class="logo"> <img src="images/logo.png" alt="" > <span>MONTSERRAT</span>
-              <hr>
-              </a> 
+              <div id="about-div">
+              	<img id="logo" src="images/logo.png" alt="" > <p id="about-title">About this site.</span>
+              	<hr>
+              	<p class = "about-text">Ever wish you could search only the best movies not just by title and genre, but by actor(s), director(s), and writers as well?</p><br />
+              	<p class = "about-text">Wait no longer! Surf to your heart's content thanks to:</p><a href="https://www.imdb.com/interfaces/" target="_blank">IMDB</a><a href="http://www.omdbapi.com/" target="_blank">OMDB API</a></p><br /><p class="about-text"></p><br />featuring<a href="https://www.djangoproject.com/" target="_blank">the Django web framework</a>
+              </div>
               <!--======= NAV LINKS =========-->
               <ul class="nav-links">
-                <li class="active"><a href="index.html">PORTFOLIO</a></li>
+               <!--  <li class="active"><a href="index.html">PORTFOLIO</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                 <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="contact.html">CONTACT</a></li> -->
                 
                 <!--======= Drop Down =========-->
-                <li class="drop-menu"> <a href="#." class="title collapsed" data-toggle="collapse" data-target="#drop-down"> DROPDOWN </a>
+                <!-- <li class="drop-menu"> <a href="#." class="title collapsed" data-toggle="collapse" data-target="#drop-down"> DROPDOWN </a>
                   <div class="collapse" id="drop-down">
                     <div class="well">
                       <ul>
@@ -77,10 +82,10 @@
                       </ul>
                     </div>
                   </div>
-                </li>
+                </li> -->
               </ul>
               <!--======= Address =========-->
-              <p class="ads">186 Memorial Park NEW YORK, NY</p>
+              <!-- <p class="ads">186 Memorial Park NEW YORK, NY</p> -->
             </div>
           </div>
         </div>
@@ -122,8 +127,7 @@
           </div>
         </div> -->
         
-        <!--======= SEARCH ICON =========--> 
-        <a href="" class="open-search header-open-search"><i class="ion-ios-search"></i></a> </nav>
+       </nav>
     </header>
     
     	{% block content %}{% endblock %}
@@ -135,7 +139,7 @@
 <div class="search-overlay"></div>
 <div class="search"> <a href="" class="search-close"><i class="ion-android-close"></i></a>
   <div class="row">
-    <div id="search-form-div" class="col-sm-6 col-sm-offset-3">
+    <div id="search-form-div" class="col-sm-9 col-sm-offset-3">
       <form action="" method="get" class="search-form">
         <!-- <input type="text" id="search" name="search" class="text-center" placeholder="Search" />	 -->
         {{ filter.form|crispy }}

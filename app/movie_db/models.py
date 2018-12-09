@@ -120,9 +120,60 @@ class Title(models.Model):
     class Meta:
         managed = False
         db_table = 'title'
-        ordering = ['primarytitle']
+        ordering = ['-averagerating']
         verbose_name = 'Film title'
         verbose_name_plural = 'Film names'
 
     def __str__(self):
         return self.primarytitle + ", " + self.startyear + " " + self.averagerating
+
+    @property
+    def director_names(self):
+
+        directors = self.director.order_by('primaryname')
+
+        names = []
+        for director in directors:
+            if director is None:
+                continue
+            name = director.primaryname
+            if name is None:
+                continue
+            if name not in names:
+                names.append(name)
+
+        return ', '.join(names)
+
+    @property
+    def actor_names(self):
+
+        actors = self.actor.order_by('primaryname')
+
+        names = []
+        for actor in actors:
+            if actor is None:
+                continue
+            name = actor.primaryname
+            if name is None:
+                continue
+            if name not in names:
+                names.append(name)
+
+        return ', '.join(names)
+
+    @property
+    def writer_names(self):
+
+        writers = self.writer.order_by('primaryname')
+
+        names = []
+        for writer in writers:
+            if writer is None:
+                continue
+            name = writer.primaryname
+            if name is None:
+                continue
+            if name not in names:
+                names.append(name)
+
+        return ', '.join(names)

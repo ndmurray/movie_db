@@ -93,7 +93,7 @@ div.hover-sec p {
 
 /*Placeholder*/
 
-h1#placeholder {
+h1.placeholder {
 	text-align: center;
     color: #FFF;
     font-size: 2.5em;
@@ -103,6 +103,11 @@ h1#placeholder {
 
 
 /*BASE.HTML*/
+
+.nav-text {
+	color: #FFF;
+	margin-top: 1em;
+}
 
 #search-form-div {
     margin-left: 4em;
@@ -117,6 +122,32 @@ form.search-form label {
 	border-bottom-color: #000;
 }
 
+div#about-div{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+#about-div a {
+    color: #193480;
+    font-weight: bold;
+}
+
+p#about-title {
+    color: #000;
+    font-size: 1.2em;
+    margin-top: 3em;
+}
+
+p.about-text {
+	color: #000 !important;
+}
+
+/*film_detail.html*/
+
+
+
+
+
 /*=======================================================
 			THEME STYLING START
 ========================================================*/
@@ -125,7 +156,7 @@ form.search-form label {
 	padding: 0px;
 }
 body {
-	background: #395e5b;
+	background: #1e2f31;
 	font-weight: normal;
 	position: relative;
 	font-size: 14px;
@@ -145,7 +176,7 @@ body {
 ========================================================*/
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-	color: #333333;
+	color: #FFF;
 	font-family: 'Montserrat';
 }
 h1 {
@@ -395,7 +426,7 @@ header nav {
 	width: 80px;
 	z-index: 9999999;
 	text-align: center;
-	background: #333333;
+	background: #000;
 	padding-top: 1%;
 }
 header nav i {
@@ -438,9 +469,11 @@ header .open-navigation .navi-in {
 .navgation:hover .open-navigation {
 	opacity: 1;
 	width: 250px;
+	box-shadow: 5px 2px 12px black;
 }
 .navgation:hover .navi-in {
 	display: block;
+	width: 100%;
 }
 header .share {
 	position: relative;
@@ -554,7 +587,8 @@ header .share .open-navigation {
 }
 .search.open {
 	display: block;
-	width: 67%;
+	width: 45%;
+	box-shadow: 5px 2px 12px black;
 }
 .search button {
 	border: none;

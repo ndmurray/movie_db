@@ -6,7 +6,7 @@ from movie_db.models import Title, Actor, Writer, \
 class TitleFilter(django_filters.FilterSet):
 	primarytitle = django_filters.CharFilter(
 		field_name='primarytitle',
-		label='Film Title',
+		label='Title(s)',
 		lookup_expr='icontains'
 	)
 
