@@ -72,8 +72,3 @@ class TitleFilter(django_filters.FilterSet):
 	# Add date_inscribed filter here
 
 
-	class Meta:
-		model = Title
-		# form = SearchForm
-		# fields [] is required, even if empty.
-		fields = []

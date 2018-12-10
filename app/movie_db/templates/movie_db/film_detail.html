@@ -1,12 +1,17 @@
 {% extends 'movie_db/base.html' %}
 {% load humanize %}
 {% block content %}
-
+   {% if user.is_authenticated %}
 
 <div class="portfolio">
       <div class="container-fluid">
+      	<div class="row">
+      		
 			<h2 class="title">{{ film_detail.primarytitle | safe }}, {{ film_detail.startyear | safe }}</h2>
 			<h4 class="sub-head">Rated <strong>{{film_detail.averagerating}}</strong> based on <strong>{{film_detail.numvotes|intcomma}}</strong> votes</h4>
+      	</div>
+		<div class="row">
+			
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<p>Starring {{ film_detail.actor_names }} </p>
 		
@@ -20,8 +25,14 @@
 				<p>Written by {{ film_detail.writer_names }} </p>
 		
 			</div>
+		</div>
+		<div class="row">
+			<!-- <iframe src="http://www.imdb.com/title/{{ film_detail.title_id}}"></iframe> -->
+		</div>
 	  </div>
 </div>
 	
-
+  {% else %}
+      <a href="{% url 'login' %}">Log in</a>
+  {% endif %}
 {% endblock content %}

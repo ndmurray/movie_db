@@ -1,6 +1,7 @@
 {% extends 'movie_db/base.html' %}
 {% load humanize %}
 {% block content %}
+    {% if user.is_authenticated %}
 
 <!--======= PORTFOLIO =========-->
     <div class="portfolio">
@@ -45,5 +46,7 @@
         </ul>
       </div>
     </div>
-
+  {% else %}
+      <a href="{% url 'login' %}">Log in</a>
+  {% endif %}
 {% endblock content %}

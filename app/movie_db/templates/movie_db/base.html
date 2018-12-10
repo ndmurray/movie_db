@@ -42,7 +42,15 @@
     <!--======= HEADER =========-->
     <header>
       <nav>
-      
+      <!--======= SEARCH ICON =========--> 
+        <a href="" class="open-search header-open-search"><i class="ion-ios-search"></i></a>
+        <!---HOME-->
+        <a href="{% url 'home' %}" class="nav-text">Home</i></a>
+        <!---LOGIN-->
+        <a href="{% url 'login' %}" class="nav-text">Login</i></a>
+        <!---LOGOUT-->
+        <a href="{% url 'logout' %}" class="nav-text">Logout</i></a>
+
       <!--======= Close nav =========-->
         <div class="nav-close">
           	<a href="#"><i class="ion-ios-close-outline"></i></a>
@@ -50,10 +58,11 @@
           
           
         <div class="navgation"> 
-        <!--======= SEARCH ICON =========--> 
-        <a href="" class="open-search header-open-search"><i class="ion-ios-search"></i></a> 
+         
+        
         <!--========= ABOUT ============-->
         <a href="#." class="nav-text"><!--<i class="ion-navicon fa-2x">-->About</i></a>
+        
           <div class="open-navigation">
             <div class="navi-in animated flipInY"> 
               <!--======= LOGO =========--> 
