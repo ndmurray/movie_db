@@ -52,6 +52,34 @@ class FilmDetailView(generic.DetailView):
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
 
-	def get_queryset(self):
-		return Title.objects.all() 
+#Create, update, delete
+@method_decorator(login_required, name='dispatch')
+class TitleCreateView(generic.View):
+	model = Title
+	form_class = TitleForm
+	success_message = "Title created successfully"
+	template_name = 'movie_db/title_new.html'
+	# fields = '__all__' <-- superseded by form_class
+	# success_url = reverse_lazy('heritagesites/site_list')
 
+	def dispatch(self, *args, **kwargs):
+		return super().dispatch(*args, **kwargs)
+
+	def post(self, request):
+		form = TitleForm(request.POST)
+		if form.is_valid():
+			title = form.save(commit=False)
+			title.save()
+			for actor in form.cleaned_data['actors']:
+				ActorLookup.objects.create(a_title=title, actor=actor)
+			for director in form.cleaned_data['directors']:
+				DirectorLookup.objects.create(d_title=title, director=actor)
+			for writer in form.cleaned_data['writers']:
+				WriterLookup.objects.create(w_title=title, writer=actor)
+			return redirect(title) # shortcut to object's get_absolute_url()
+			# return HttpResponseRedirect(site.get_absolute_url())
+		return render(request, 'movie_db/title_new.html', {'form': form})
+
+	def get(self, request):
+		form = TitleForm()
+		return render(request, 'movie_db/title_new.html', {'form': form})
