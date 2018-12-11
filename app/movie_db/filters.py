@@ -16,12 +16,6 @@ class TitleFilter(django_filters.FilterSet):
 		lookup_expr='icontains'
 	)
 
-	genres = django_filters.CharFilter(
-		field_name='genres',
-		label='Genre(s)',
-		lookup_expr='icontains'
-	)
-
 	actors = django_filters.CharFilter(
 		field_name='actorlookup__actor__primaryname',
 		label='Actor(s)',

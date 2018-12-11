@@ -31,6 +31,10 @@ body
 	margin: 0 auto;
 }
 
+.container-fluid.secondary {
+    margin-left: 7em;
+}
+
 .row {
 	margin-right: 15px;
 	margin-left: 15px;
@@ -143,13 +147,16 @@ p.about-text {
 	color: #000 !important;
 }
 
-/*film_detail.html*/
+/*FORMS*/
 
-
-/*Login/Logout*/
-.container-fluid.login {
-    margin-left: 7em;
+form {
+	color: white !important;
 }
+
+.form-group {
+	width: 50%;
+}
+
 
 
 /*=======================================================

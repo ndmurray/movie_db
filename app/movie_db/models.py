@@ -126,7 +126,7 @@ class Title(models.Model):
         verbose_name_plural = 'Film names'
 
     def get_absolute_url(self):
-        return reverse('film_detail', kwargs={'pk': self.pk})
+        return reverse('home', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.primarytitle + ", " + self.startyear + " " + self.averagerating
