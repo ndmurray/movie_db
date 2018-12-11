@@ -3,6 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="container-fluid secondary">
+<div class="row">
+      <h2>Update {{title.primaryname}}</h2>
 
 <form method="post" novalidate  class = 'search-form'>
     {% csrf_token %}
@@ -10,12 +13,51 @@
 
     <!--title-->
     <div class="row">
-      <div class="col-6">
-        {{ form.primarytitle|as_crispy_field }}
-      </div>
+    	
+		  <div class="col-6">
+            {{ form.title_id|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.titletype|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.primarytitle|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.originaltitle|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.isadult|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.startyear|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.endyear|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.runtimeminutes|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.genres|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.averagerating|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.numvotes|as_crispy_field }}
+          </div>
+
+          <div class="col-6">
+            {{ form.director|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.writer|as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form.actor|as_crispy_field }}
+          </div>
     </div>
-
-
 
     <button type="submit" class="btn btn-outline-success">Update</button>
   

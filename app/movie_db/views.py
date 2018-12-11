@@ -123,9 +123,9 @@ class TitleUpdateView(generic.UpdateView):
 			.filter(w_title=title.title_id)
 
 		# New lists
-		new_actors = form.cleaned_data['actors']
-		new_directors = form.cleaned_data['directors']
-		new_writers = form.cleaned_data['writers']
+		new_actors = form.cleaned_data['actor']
+		new_directors = form.cleaned_data['director']
+		new_writers = form.cleaned_data['writer']
 
 		# TODO can these loops be refactored?
 
