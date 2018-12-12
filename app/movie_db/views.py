@@ -196,7 +196,7 @@ class TitleUpdateView(generic.UpdateView):
 class TitleDeleteView(generic.DeleteView):
 	model = Title
 	success_message = "Title deleted successfully"
-	success_url = reverse_lazy('title')
+	success_url = '/movie_db'
 	context_object_name = 'title'
 	template_name = 'movie_db/title_delete.html'
 
@@ -208,15 +208,15 @@ class TitleDeleteView(generic.DeleteView):
 
 		# Delete many to many entries
 		ActorLookup.objects \
-			.filter(actor_lookup_id=self.object.actor_lookup_id) \
+			.filter(a_title_id=self.object.title_id) \
 			.delete()
 
 		DirectorLookup.objects \
-			.filter(director_lookup_id=self.object.director_lookup_id) \
+			.filter(d_title_id=self.object.title_id) \
 			.delete()
 
 		WriterLookup.objects \
-			.filter(writer_lookup_id=self.object.writer_lookup_id) \
+			.filter(w_title_id=self.object.title_id) \
 			.delete()
 
 
