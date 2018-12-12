@@ -32,4 +32,5 @@ urlpatterns = [
     path('movie_db/api/rest-auth/', include('rest_auth.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('movie_db/api/', include('api.urls')),
+    path('movie_db/api/rest-auth/registration/', include('rest_auth.registration.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

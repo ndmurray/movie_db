@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 -- Table `movie_db`.`actor_lookup`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `movie_db`.`actor_lookup` (
-  `actor_lookup_id` INT NOT NULL,
+  `actor_lookup_id` INT NOT NULL AUTO_INCREMENT,
   `actor_id` VARCHAR(10) NOT NULL,
   `a_title_id` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`actor_lookup_id`),
@@ -62,13 +62,13 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`actor_lookup` (
   CONSTRAINT `a_title_id`
     FOREIGN KEY (`a_title_id`)
     REFERENCES `movie_db`.`title` (`title_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `actor_id`
     FOREIGN KEY (`actor_id`)
     REFERENCES `movie_db`.`actor` (`actor_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -90,7 +90,7 @@ ENGINE = InnoDB;
 -- Table `movie_db`.`director_lookup`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `movie_db`.`director_lookup` (
-  `director_lookup_id` INT NOT NULL,
+  `director_lookup_id` INT NOT NULL AUTO_INCREMENT,
   `d_title_id` VARCHAR(10) NOT NULL,
   `director_id` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`director_lookup_id`),
@@ -100,13 +100,13 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`director_lookup` (
   CONSTRAINT `d_title_id`
     FOREIGN KEY (`d_title_id`)
     REFERENCES `movie_db`.`title` (`title_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `director_id`
     FOREIGN KEY (`director_id`)
     REFERENCES `movie_db`.`director` (`director_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -128,7 +128,7 @@ ENGINE = InnoDB;
 -- Table `movie_db`.`writer_lookup`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `movie_db`.`writer_lookup` (
-  `writer_lookup_id` INT NOT NULL,
+  `writer_lookup_id` INT NOT NULL AUTO_INCREMENT,
   `w_title_id` VARCHAR(10) NOT NULL,
   `writer_id` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`writer_lookup_id`),
@@ -138,13 +138,13 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`writer_lookup` (
   CONSTRAINT `w_title_id`
     FOREIGN KEY (`w_title_id`)
     REFERENCES `movie_db`.`title` (`title_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `writer_id`
     FOREIGN KEY (`writer_id`)
     REFERENCES `movie_db`.`writer` (`writer_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 

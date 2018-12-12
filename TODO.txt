@@ -2,6 +2,9 @@ TODO:
 -Style film_detail.html
 -Style login mpage (login.html)
 -Add not just build, but populate script to the mysql database generation code, see if you can find this in one of the earlier exercize documents
+-Be sure to note that new_title.html takes a few minutes to load
+-Rebuild the database and reimport tables, we had to make an edit to actor_lookup table (originally forgot to make it autoincrement). This needs to happen for the add film functionality to work
+-Add requirements.txt
 
 See
 
