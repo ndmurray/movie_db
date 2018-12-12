@@ -190,3 +190,36 @@ class TitleUpdateView(generic.UpdateView):
 
 		return HttpResponseRedirect(title.get_absolute_url())
 		# return redirect('heritagesites/site_detail', pk=site.pk)
+
+#Delete Title
+@method_decorator(login_required, name='dispatch')
+class TitleDeleteView(generic.DeleteView):
+	model = Title
+	success_message = "Title deleted successfully"
+	success_url = reverse_lazy('title')
+	context_object_name = 'title'
+	template_name = 'movie_db/title_delete.html'
+
+	def dispatch(self, *args, **kwargs):
+		return super().dispatch(*args, **kwargs)
+
+	def delete(self, request, *args, **kwargs):
+		self.object = self.get_object()
+
+		# Delete many to many entries
+		ActorLookup.objects \
+			.filter(actor_lookup_id=self.object.actor_lookup_id) \
+			.delete()
+
+		DirectorLookup.objects \
+			.filter(director_lookup_id=self.object.director_lookup_id) \
+			.delete()
+
+		WriterLookup.objects \
+			.filter(writer_lookup_id=self.object.writer_lookup_id) \
+			.delete()
+
+
+		self.object.delete()
+
+		return HttpResponseRedirect(self.get_success_url())

@@ -1,0 +1,16 @@
+{% extends 'movie_db/base.html' %}
+
+{% block content %}
+<div class="container-fluid secondary">
+    <div class="row">
+	  <form method="post" class = 'search-form'>
+	    {% csrf_token %}
+	    <p>Are you sure you want to delete the Film "{{ title.primarytitle }}"?</p>
+	    <button type="submit" class="btn btn-outline-danger">delete</button>
+	    <a class="btn btn-outline-secondary" href="{% url 'film_detail' title.pk %}">cancel</a>
+	  </form>
+	</div>
+</div>
+
+
+{% endblock content %}
