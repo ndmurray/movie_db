@@ -4,13 +4,16 @@ Completed as a part of the Human Computer Interaction Master's program at the Un
 
 ## Important notes for SI664 administration team
 
-0. Scroll to dynamically load search results. This app avoids loading everything at once to save load on the browser.
+0. Scroll to dynamically load search results. This app avoids loading everything at once to save load on the browser. Results are set to show 50 at a time on the page, pagination nav found at the bottom of the page.
 
 1. The list view template doubles as the home page: The home page lists users' query results by default. Hover over each search result image to reveal more entity attributes.
 
 2. Users are asked to logon immediately upon accessing the site. Use 'Logout' on the left to logout, and 'Login' on the left to log back in.
 
 3. Add/update/delete: Edit or delete any film from that film's detail page. Add a film via the "New Entry" link in the left navigation.
+
+4. Finally, seeking 50 points extra credit for implementing extra filters
+
 
 ## To launch the app
 

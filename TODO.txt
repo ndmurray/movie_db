@@ -1,10 +1,16 @@
 TODO:
 -Style film_detail.html
--Style login mpage (login.html)
--Add not just build, but populate script to the mysql database generation code, see if you can find this in one of the earlier exercize documents
--Be sure to note that new_title.html takes a few minutes to load
--Rebuild the database and reimport tables, we had to make an edit to actor_lookup table (originally forgot to make it autoincrement). This needs to happen for the add film functionality to work
--Add requirements.txt
+-Style login/logout page (login.html)
+-Do button hover styling
+-Make sure search shows up on all pages NOT WORKING.
+-Add pagination NOT GONNA
+-Add "No poster" image DONE.
+-Add not just build, but populate script to the mysql database generation code, see below DONE.
+
+
+README:
+-Make sure to tell him that your home page doubles as your list view template
+
 
 See
 
@@ -13,9 +19,8 @@ INTO TABLE publisher
   CHARACTER SET utf8mb4
   FIELDS TERMINATED BY ',' ENCLOSED BY '"'
   LINES TERMINATED BY '\n'
-  (publisher_name);
 
 
   From https://github.com/UMSI-SI664-2018Fall/SI664-docs/blob/master/sql/mysql_create_database.md
 
-  -Make sure to tell him that your home page doubles as your list view template
+  
