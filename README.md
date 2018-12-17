@@ -28,7 +28,7 @@ OMDB: http://www.omdbapi.com/
 
 ## Data model
 
-![alt text](static/img/movie_db.png)
+![alt text](https://raw.githubusercontent.com/ndmurray/movie_db/static/img/movie_db_model.png)
 
 Please see movie_db_model.png in the root directory of this repository for a graphical representation of the (MySQL) data model.
 
