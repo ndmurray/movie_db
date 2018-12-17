@@ -52,6 +52,9 @@ class FilmDetailView(generic.DetailView):
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
 
+	def get_queryset(self):
+		return Title.objects.all() 
+
 #Create, update, delete
 
 #Create title

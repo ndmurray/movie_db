@@ -34,6 +34,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`title` (
 ENGINE = InnoDB;
 
 
+LOAD DATA LOCAL INFILE './app_data/title.csv'
+INTO TABLE title
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
 -- -----------------------------------------------------
 -- Table `movie_db`.`actor`
 -- -----------------------------------------------------
@@ -46,6 +52,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`actor` (
   PRIMARY KEY (`actor_id`),
   UNIQUE INDEX `actor_id_UNIQUE` (`actor_id` ASC) VISIBLE)
 ENGINE = InnoDB;
+
+LOAD DATA LOCAL INFILE './app_data/actor.csv'
+INTO TABLE actor
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
 
 
 -- -----------------------------------------------------
@@ -72,6 +84,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`actor_lookup` (
 ENGINE = InnoDB;
 
 
+LOAD DATA LOCAL INFILE './app_data/actor_lookup.csv'
+INTO TABLE actor_lookup
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
 -- -----------------------------------------------------
 -- Table `movie_db`.`director`
 -- -----------------------------------------------------
@@ -84,6 +102,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`director` (
   PRIMARY KEY (`director_id`),
   UNIQUE INDEX `director_id_UNIQUE` (`director_id` ASC) VISIBLE)
 ENGINE = InnoDB;
+
+LOAD DATA LOCAL INFILE './app_data/director.csv'
+INTO TABLE director
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
 
 
 -- -----------------------------------------------------
@@ -109,6 +133,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`director_lookup` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+LOAD DATA LOCAL INFILE './app_data/director_lookup.csv'
+INTO TABLE director_lookup
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
 
 -- -----------------------------------------------------
 -- Table `movie_db`.`writer`
@@ -122,6 +152,12 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`writer` (
   PRIMARY KEY (`writer_id`),
   UNIQUE INDEX `writer_id_UNIQUE` (`writer_id` ASC) VISIBLE)
 ENGINE = InnoDB;
+
+LOAD DATA LOCAL INFILE './app_data/writer.csv'
+INTO TABLE writer
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
 
 
 -- -----------------------------------------------------
@@ -146,6 +182,13 @@ CREATE TABLE IF NOT EXISTS `movie_db`.`writer_lookup` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
+
+LOAD DATA LOCAL INFILE './app_data/writer_lookup.csv'
+INTO TABLE writer_lookup
+  CHARACTER SET utf8mb4
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

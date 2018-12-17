@@ -151,10 +151,11 @@ p.about-text {
 
 form {
 	color: white !important;
+	width: 50%;
 }
 
-.form-group {
-	width: 50%;
+.search-form {
+	width: 100%;
 }
 
 
