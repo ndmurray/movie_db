@@ -31,8 +31,8 @@ class ActorLookup(models.Model):
     actor_lookup_id = models.AutoField(primary_key=True)
     #CHANGED FROM INTEGERFIELD, did the same to directorlookup and writerlookup models
     #actor_lookup_id = models.IntegerField(primary_key=True)
-    actor = models.ForeignKey(Actor, models.CASCADE)
-    a_title = models.ForeignKey('Title', models.CASCADE)
+    actor = models.ForeignKey(Actor, on_delete=models.CASCADE)
+    a_title = models.ForeignKey('Title', on_delete=models.CASCADE)
 
     class Meta:
         managed = False
@@ -62,8 +62,8 @@ class Director(models.Model):
 
 class DirectorLookup(models.Model):
     director_lookup_id = models.AutoField(primary_key=True)
-    d_title = models.ForeignKey('Title', models.CASCADE)
-    director = models.ForeignKey(Director, models.CASCADE)
+    d_title = models.ForeignKey('Title', on_delete=models.CASCADE)
+    director = models.ForeignKey(Director, on_delete=models.CASCADE)
 
     class Meta:
         managed = False
@@ -92,8 +92,8 @@ class Writer(models.Model):
 
 class WriterLookup(models.Model):
     writer_lookup_id = models.AutoField(primary_key=True)
-    w_title = models.ForeignKey('Title', models.CASCADE)
-    writer = models.ForeignKey(Writer, models.CASCADE)
+    w_title = models.ForeignKey('Title', on_delete=models.CASCADE)
+    writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
 
     class Meta:
         managed = False
