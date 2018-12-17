@@ -7,6 +7,8 @@
     <div class="portfolio">
       <div class="container-fluid">
       <h2 id="page-title">Welcome to IMDB's top rated 5,000 films.</h2>
+
+
         <ul class="row items">
 
           {% for title in object_list %}
@@ -27,13 +29,25 @@
                 <a href="{% url 'film_detail' title.pk %}" target = "_blank" class="hover-in"> <span class="name">{{ title.primarytitle | safe }}</span>
                 <hr>
                 <!-- <span class="cat">Branding</span> </a> </div> -->
+                {% if title.genres != NULL %}
                 <p>{% if title.genres|length > 80 %}
                         {{title.genres|slice:80}}
                    {% else  %}
                         {{title.genres }}
                    {% endif %}</p>
+                {% else %}
+                <p>No genre available</p>
+                {% endif %}
+                {% if title.runtimeminutes != '\N' and title.runtimeminutes != NULL %}
                 <p>Runtime: {{ title.runtimeminutes }} minutes</p>
+                {% else %}
+                <p>No runtime available</p>
+                {% endif %}
+                {% if title.averagerating != NULL %}
                 <p style="line-height: 16px;">Rated {{title.averagerating}}/10 based on <strong>{{title.numvotes|intcomma}} votes</strong>.</p>
+                {% else %}
+                <p style="line-height: 16px;">No rating available</p>
+                {% endif %}
 
             </li>
           <!-- </div> -->
@@ -44,6 +58,9 @@
          {% endfor %}
 
         </ul>
+
+        {% include 'movie_db/pagination.html' %}
+        
       </div>
     </div>
   {% else %}

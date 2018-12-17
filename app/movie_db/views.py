@@ -31,6 +31,8 @@ class HomePageView(FilterView):
 	context_object_name = 'home'
 	template_name = 'movie_db/home.html'
 	filterset_class = TitleFilter
+	paginate_by = 50
+
 
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
